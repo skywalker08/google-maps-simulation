@@ -1,0 +1,173 @@
+[
+  {
+    "_comment": "Ambulance1 hastaya giden ilk ambulans süresi, ambulance2 ecmonun hasteneye gidiş süresi, ambulance3 hastanın hasteneye gidiş süresi"
+  },
+  {
+    "info": {
+      "ambulance1": 4,
+      "ambulance2": 11,
+      "ambulance3": 5
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 3,
+      "ambulance2": 11,
+      "ambulance3": 5
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 9,
+      "ambulance2": 11,
+      "ambulance3": 14
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 4,
+      "ambulance2": 8,
+      "ambulance3": 9
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 4,
+      "ambulance2": 10,
+      "ambulance3": 7
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 8,
+      "ambulance2": 9,
+      "ambulance3": 14
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 3,
+      "ambulance2": 11,
+      "ambulance3": 5
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 4,
+      "ambulance2": 10,
+      "ambulance3": 7
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 5,
+      "ambulance2": 8,
+      "ambulance3": 5
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 5,
+      "ambulance2": 10,
+      "ambulance3": 4
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 1,
+      "ambulance2": 10,
+      "ambulance3": 2
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 3,
+      "ambulance2": 10,
+      "ambulance3": 10
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 3,
+      "ambulance2": 11,
+      "ambulance3": 9
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 4,
+      "ambulance2": 8,
+      "ambulance3": 5
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 9,
+      "ambulance2": 10,
+      "ambulance3": 12
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 6,
+      "ambulance2": 10,
+      "ambulance3": 9
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 6,
+      "ambulance2": 11,
+      "ambulance3": 10
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 7,
+      "ambulance2": 11,
+      "ambulance3": 10
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 2,
+      "ambulance2": 11,
+      "ambulance3": 5
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 7,
+      "ambulance2": 10,
+      "ambulance3": 10
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 1,
+      "ambulance2": 10,
+      "ambulance3": 6
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 7,
+      "ambulance2": 10,
+      "ambulance3": 10
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 3,
+      "ambulance2": 10,
+      "ambulance3": 10
+    }
+  },
+  {
+    "info": {
+      "ambulance1": 3,
+      "ambulance2": 10,
+      "ambulance3": 10
+    }
+  }
+]
