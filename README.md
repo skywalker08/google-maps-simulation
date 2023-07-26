@@ -10,7 +10,7 @@ Currently runs at https://continual-lodge-385210.lm.r.appspot.com/
 
 # Requirements
 
-- Google maps api keys (one for front end, one for back end)
+- Google maps api keys (one for front end, one for back end) / replace YOUR_API_KEY
 - In google cloud console activate Maps javascript api, Directions api, roads api
 - node.js
 - modules for nodejs => axios, body-parser, express, fs, path
