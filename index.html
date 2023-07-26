@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ecmo Simülasyon</title>
+    <style type="text/css">
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: Roboto, Noto, sans-serif;
+      }
+
+      #map {
+        height: 500px;
+      }
+
+      #interpolate {
+        width: 2em;
+        height: 2em;
+      }
+
+      #coords0 {
+        resize: vertical;
+        min-height: 75px;
+        max-height: 200px;
+      }
+      #coords1 {
+        resize: vertical;
+        min-height: 75px;
+        max-height: 200px;
+      }
+
+      .log {
+        height: 200px;
+        width: 400px;
+        font-size:large;
+
+      }
+      .block {
+        clear: both;
+        margin: 1.5em auto;
+        text-align: center;
+      }
+
+      #legend {
+        float: center;
+        margin: 5px 15px;
+        font-size: 13px;
+      }
+
+      .button {
+      display: inline-block;
+      position: relative;
+      border: 0;
+      padding: 0 1.7em;
+      min-width: 120px;
+      height: 32px;
+      line-height: 32px;
+      border-radius: 2px;
+      font-size: 0.9em;
+      background-color: #fff;
+      color: #646464;
+    }
+
+    .button.narrow {
+      width: 60px;
+    }
+
+    .button.grey {
+      background-color: #eee;
+    }
+
+    .button.blue {
+      background-color: #4285f4;
+      color: #fff;
+    }
+
+    .button.green {
+      background-color: #0f9d58;
+      color: #fff;
+    }
+
+    .button.raised {
+      transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition-delay: 0.2s;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    }
+
+    .button.raised:active {
+      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+      transition-delay: 0s;
+    }
+
+    .floating {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 5;
+      background-color: rgba(255, 255, 255, 0.75);
+      padding: 1px;
+      border: 1px solid #999;
+      text-align: center;
+      line-height: 18px;
+    }
+
+    .floating.panel {
+      width: 400px;
+    }
+
+    .coords-small {
+      width: 350px;
+    }
+
+    .coords-large {
+      width: 400px;
+    }
+
+    .button-div {
+      padding: 0px 50px;
+      width: 300px;
+      line-height: 40px;
+    }
+
+    #toggle {
+      width: 25px;
+      z-index: 10;
+      cursor: default;
+      font-size: 2em;
+      padding: 1px;
+      color: #999;
+      display: none;
+    }
+    </style>
+  
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&key=YOUR_API_KEY"></script>
+    <script src="https://www.gstatic.com/external_hosted/jquery2.min.js"></script>
+    <script src="static/ecmo.js"></script>
+  </head>
+
+  <body onload="location.hash='';">
+    <div class="floating" id="toggle">&mdash;</div>
+    <div id="panel">
+      <div class="block">
+        <strong>Simülasyon</strong>
+        <div id="button-div">
+          <button id="eg1" class="button raised blue" style="display: none;">ambulance</button>
+          <button id="eg2" class="button raised blue" style="display: none;">ambulance back</button>
+          <button id="eg3" class="button raised blue" style="display: none;">ecmo</button>
+          <button id="startAnimate" class="button raised green">Başlat</button>
+          <button id="getStatistic" class="button raised green">İstatistik Al</button>
+        </div>
+      </div>
+      <form id="controls">
+        <div class="block">
+          <div>
+            <a id="statInfo" type="text"></a><br>
+            <strong><span id="requestURL"> Request URL </span> Koordinasyon Bilgileri </strong><br>
+            <textarea id="coords0" class="u-full-width coords-large" type="text" placeholder="-35.123,150.332 | 80.654,22.439"></textarea><br>
+            <textarea id="coords1" class="u-full-width coords-large" type="text" placeholder="-35.123,150.332 | 80.654,22.439"></textarea><br>
+            <textarea id="roadTimes" class="u-full-width coords-large" type="text" placeholder="" id="exampleEmailInput" style="display: none;"></textarea>
+          </div>
+          <div>
+            <label style="display: none;">Interpolate: </label>
+            <input for="interpolate" id="interpolate" type="checkbox" style="display: none;"/> <br>
+            <a id="roadtimesinfo" type="text"></a>
+          </div>
+        </div>
+        <div>
+          <div class="block">
+            <button id="plot" class="button raised blue" style="display: none;">Rotayı tekrarla</button>
+          </div>
+          <!-- <div id="legend">
+            <img src="https://maps.google.com/mapfiles/ms/icons/green-dot.png" style="height:16px;"> Original
+            <img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png"/> Snapped
+            <img src="https://maps.google.com/mapfiles/ms/icons/blue-dot.png"/> Interpolated
+            <img src="https://maps.google.com/mapfiles/ms/icons/yellow-dot.png"/> Unsnappable
+          </div> -->
+          <div>
+            <p id="warningMessage"></p>
+            <p id="unsnappedPoints"></p>
+          </div>
+        </div>
+      </form>
+      <a style="font-size: large;">Ecmo Demo</a><br>
+      <a style="font-size: large;" id="sayac"></a>
+      <textarea id="log" class="log"></textarea>
+    </div>  
+    <div id="map">
+    </div>
+  </body>
+</html>
