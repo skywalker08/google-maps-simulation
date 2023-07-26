@@ -133,24 +133,6 @@ app.get('/getDistance', (req, res) => {
       }
       file['coords2'] = coords;
       
-      // statistic
-//       var statjsonfile = fs.readFileSync('static/statistic.json');
-//       var statFile= JSON.parse(statjsonfile);
-//       var stat = {
-//         "info":  {
-//           "ambulance1":file['ambulance1']['varis vakti'],
-//           "ambulance2":file['ambulance2']['varis vakti'],
-//           "ambulance3":file['ambulance3']['varis vakti']
-//         }
-//       }
-//       statFile.push(stat);
-//       var statFile = JSON.stringify(statFile, null, 2);
-//       fs.writeFile('static/statistic.json', statFile, err => {
-        // error checking
-//         if(err) throw err;
-//         console.log("New data added");
-//       });   
-      //statistic
       
       res.send(file);
     })).catch(errors => {
